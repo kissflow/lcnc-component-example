@@ -8,7 +8,7 @@ module.exports = {
   mode: 'development',
   entry: './src/index.js',
   output: {
-    filename: '[name].[contenthash:8].js',
+    filename: 'static/[name].[contenthash:8].js',
     path: path.resolve(__dirname, 'dist'),
   },
   devServer: {
@@ -28,7 +28,7 @@ module.exports = {
       inject: 'body',
     }),
     new MiniCssExtractPlugin({ 
-      filename: '[name].[contenthash:8].css'
+      filename: 'static/[name].[contenthash:8].css'
     }),
     new CleanWebpackPlugin()
   ],
