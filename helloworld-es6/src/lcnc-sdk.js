@@ -1,74 +1,14 @@
-function randomNumber() {
-    return Math.floor(Math.random() * 10000) + 1;
+function generateId() {
+    return Math.floor(Date.now()).toString(36);
 }
 
 function postMessage(args) {
     window.parent.postMessage(args, "*");
 }
-self.fetch = (url, config) => {
-    return new Promise((resolve, reject) => {
-        const eventId = randomNumber();
-        postMessage({
-            command: "FETCH",
-            eventId,
-            url,
-            config
-        });
-        onmessage = (e) => {
-            if (e.data.eventId === eventId) {
-            resolve(e.data.resp);
-            }
-        };
-    });
-};
-
-class Context {
-    static showAlert(message) {
-        postMessage({
-            key: "showAlert",
-            command: "MESSAGE",
-            data: message
-        });
-    }
-    static showConfirm({ title, content, onOK, onCancel, okText, cancelText }) {
-        const eventId = randomNumber();
-        postMessage({
-                data: {
-                title,
-                content,
-                okText,
-                cancelText
-            },
-            eventId,
-            command: "CONFIRM"
-        });
-        onmessage = (e) => {
-            if (e.data.eventId === eventId) {
-                if (e.data.action === "OK") {
-                    onOK();
-                } else {
-                    onCancel();
-                }
-            }
-        };
-    }
-    static redirect(url, shouldConfirm) {
-        const eventId = randomNumber();
-        postMessage({
-            data: {
-                url
-            },
-            eventId,
-            command: "REDIRECT"
-        });
-    }
-}
   
-class LCNCSdk {
+class LcncSdk {
     constructor(props) {
         console.log("Initializing LCNC SDK", props);
-        this.context = Context;
-
         this._listeners = {};
         this._onMessage = this._onMessage.bind(this);
 
@@ -76,11 +16,11 @@ class LCNCSdk {
     }
 
     api(url, args={}) {
-        return this._fetch({ url, args });
+        return this._fetch("API", { url, args });
     }
 
     watchParams(args={}) {
-        return this._fetch(args, "PARAMS");
+        return this._fetch("PARAMS", args);
     }
 
     _addListener(_id, callback) {
@@ -88,9 +28,10 @@ class LCNCSdk {
         this._listeners[_id].push(callback);
     }
 
-    _fetch(args, _id=randomNumber()) {
+    _fetch(command, args) {
         return new Promise((resolve, reject) => {
-            postMessage({_id, ...args});
+            const _id = generateId();
+            postMessage({_id, command, ...args});
             this._addListener(_id, (data) => {
               if (data.errorMessage) {
                 reject(data);
@@ -117,11 +58,17 @@ class LCNCSdk {
             });
         }
     }
+}
+
+class ProcessSdk extends LcncSdk {
     
 }
 
-function init(options = {}) {
-    return new LCNCSdk(options);
+function initSDK(config = {}) {
+    if (config.flow === "Process") {
+        return new ProcessSdk(config);
+    }
+    return new LcncSdk(config);
 }
 
-export default init
+export default initSDK
