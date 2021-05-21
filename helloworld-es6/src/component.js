@@ -28,7 +28,7 @@ export default class Component {
     callParent () {
       this.lcnc.api("/id").then((res) => {
          console.info("API response is", res);
-         document.getElementById("username").innerText = res.Name;
+         document.getElementById("username").innerText = res.UserDetails.Name;
       });
     }
 

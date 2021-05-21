@@ -17,6 +17,7 @@ class LcncSdk {
         window.addEventListener("message", this._onMessage, false);
     }
 
+    //************************** external endpoints *************************
     api(url, args={}) {
         return this._fetch("API", { url, args });
     }
@@ -24,6 +25,7 @@ class LcncSdk {
     watchParams(args={}) {
         return this._fetch("PARAMS", args);
     }
+    //************************************************************************
 
     _addListener(_id, callback) {
         this._listeners[_id] = this._listeners[_id] || [];
