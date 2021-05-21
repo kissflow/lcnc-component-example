@@ -17,6 +17,7 @@ class LcncSdk {
         window.addEventListener("message", this._onMessage, false);
     }
 
+    //************************** external endpoints *************************
     api(url, args={}) {
         return this._fetch("API", { url, args });
     }
@@ -24,6 +25,7 @@ class LcncSdk {
     watchParams(args={}) {
         return this._fetch("PARAMS", args);
     }
+    //************************************************************************
 
     _addListener(_id, callback) {
         this._listeners[_id] = this._listeners[_id] || [];
@@ -45,9 +47,9 @@ class LcncSdk {
       }
 
     _onMessage(event) {
-        console.log(event.origin, "!==", location.origin);
-        if (event.origin !== location.origin) {
-            console.log("child receives messsage", event);
+        console.log(event.origin, "!==", window.location.origin);
+        if (event.origin !== window.location.origin) {
+            console.log("child receives msssage", event);
             const data = event.data;
             const _req = data._req || {}
             let listeners = this._listeners[_req._id] || [];

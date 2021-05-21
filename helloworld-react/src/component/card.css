@@ -10,9 +10,20 @@
     border-radius: .25rem;
 }
 
-.card-img, .card-img-top {
+.card-header {
+    background-color: #282c34;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+.card-img {
     border-top-left-radius: calc(.25rem - 1px);
     border-top-right-radius: calc(.25rem - 1px);
+    height: 40vmin;
+    pointer-events: none;
 }
 
 .card-body {
@@ -34,4 +45,20 @@
     border-radius: 0.2rem;
     border: 1px solid #21ba45;
     padding: 0.3rem;
+    font-weight: 600;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .card-img {
+        animation: App-logo-spin infinite 20s linear;
+    }
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }

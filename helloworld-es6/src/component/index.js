@@ -1,11 +1,13 @@
 //import LCNC from '@kissflow/lcnc-sdk-js';
 import LCNC from './lcnc-sdk';
 
-export default class Component {
+const lcnc = LCNC();
+
+export default class Card {
     constructor (elem) {
       if (!elem) return
       this.elem = elem
-      this.lcnc = LCNC();
+      this.lcnc = lcnc;
     }
 
     render () {
