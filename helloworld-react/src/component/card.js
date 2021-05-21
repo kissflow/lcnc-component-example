@@ -12,7 +12,7 @@ class Card extends React.Component {
 
     this.state = {
       userProfile: {
-        "Name": "Test"
+        "Name": "Hello World"
       }
     }
     this.getProfileInfo = this.getProfileInfo.bind(this);
