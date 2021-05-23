@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 10</title>
+    <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="2-Advance-filter-home---Dark" transform="translate(-252.000000, -322.000000)" fill="#FFFFFE" fill-rule="nonzero">
+            <g id="add-filter" transform="translate(108.000000, 255.000000)">
+                <g id="Group-4" transform="translate(76.000000, 25.000000)">
+                    <g id="Button" transform="translate(54.000000, 32.000000)">
+                        <g id="Group-2" transform="translate(14.000000, 7.000000)">
+                            <g id="Group-10" transform="translate(0.000000, 3.000000)">
+                                <rect id="Rectangle" x="7" y="2" width="2" height="12" rx="1"></rect>
+                                <rect id="Rectangle" transform="translate(8.000000, 8.000000) rotate(90.000000) translate(-8.000000, -8.000000) " x="7" y="2" width="2" height="12" rx="1"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

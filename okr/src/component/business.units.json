@@ -1,0 +1,61 @@
+{
+    "Data": [
+        {
+            "Business_Unit": "LCNC",
+            "Members": [
+                {
+                    "Kind": "User",
+                    "Name": "Selvam",
+                    "_id": "UsmGJPtohDO5I"
+                },
+                {
+                    "Kind": "User",
+                    "Name": "Vivek",
+                    "_id": "UsRY7KJUNYnDO"
+                }
+            ],
+            "Name": "LCNC-BU",
+            "Owner": {
+                "Kind": "User",
+                "Name": "Siva",
+                "_id": "UsrnJPtpGkS8x"
+            },
+            "_id": "Business_Units_XRjNbrrSu"
+        },
+        {
+            "Business_Unit": "LCNC",
+            "Members": [
+                {
+                    "Kind": "User",
+                    "Name": "Selvam",
+                    "_id": "UsmGJPtohDO5I"
+                },
+                {
+                    "Kind": "User",
+                    "Name": "Gopal",
+                    "_id": "Us4RMpxdwxWlF"
+                }
+            ],
+            "Name": "LCNC-Product",
+            "Owner": {
+                "Kind": "User",
+                "Name": "Vivek",
+                "_id": "UsRY7KJUNYnDO"
+            },
+            "_id": "Business_Units_vmpZFETFj"
+        },
+        {
+            "Business_Unit": "DWP",
+            "Name": "DWP-BU",
+            "_id": "Business_Units_cnjFSuxF2"
+        },
+        {
+            "Business_Unit": "DWP",
+            "Name": "DWP-Product",
+            "_id": "Business_Units_7cxFT_7pt"
+        }
+    ],
+    "Filter": {},
+    "Id": "Business_Units",
+    "Sort": []
+}
