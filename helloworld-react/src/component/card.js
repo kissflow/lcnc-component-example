@@ -1,7 +1,7 @@
 import React from 'react';
 import './card.css';
 import logo from '../logo.svg';
-import LCNC from './lcnc-sdk';
+import LCNC from '@kissflow/lcnc-sdk-js'
 
 const lcnc = LCNC();
 

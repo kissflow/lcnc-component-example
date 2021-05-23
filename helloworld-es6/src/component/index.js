@@ -1,5 +1,4 @@
-//import LCNC from '@kissflow/lcnc-sdk-js';
-import LCNC from './lcnc-sdk';
+import LCNC from '@kissflow/lcnc-sdk-js';
 
 const lcnc = LCNC();
 
