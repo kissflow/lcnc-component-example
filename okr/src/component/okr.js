@@ -2,7 +2,6 @@ import React from 'react';
 import './okr.css'
 import Tabs from './widgets/tab'
 import KPIIcon from './images/kpi.svg'
-import sampleData from './okr.json'
 import Modal from './widgets/modal.js';
 
 class OKR extends React.Component {
@@ -16,7 +15,11 @@ class OKR extends React.Component {
     }
 
     componentDidMount() {
-      this.setState({okrs : sampleData.Data})
+      window.lcnc.api("/okr/list").then((res) => {
+        this.setState({okrs : res.Data})
+      });
+
+      
     }
 
     openOKRForm = (okr) => {

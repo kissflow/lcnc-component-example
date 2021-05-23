@@ -1,9 +1,8 @@
 import React from 'react';
-import './main-layout.css';
+import './main.css';
 import { groupBy } from '../utils';
 import OKR from './okr'
 import PlusIcon from './images/plus.svg'
-import sampleData from './business.units.json'
 
 class Main extends React.Component {
 
@@ -32,15 +31,11 @@ class Main extends React.Component {
   }
 
   getBusinessGroups() {
-    const businessUnits = groupBy(sampleData.Data, "Business_Unit");
-    this.setState({businessUnits})
-    /*
     window.lcnc.api("/dataset/2/AcTGcH31RtTqP/Business_Units/list").then((res) => {
       console.info("API response is", res);
       const businessUnits = groupBy(res.Data, "Business_Unit");
       this.setState({ businessUnits });
     });
-    */
   }
 
   setActiveUnit = (key) => {
