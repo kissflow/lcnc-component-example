@@ -19,13 +19,13 @@
   font-size: 18px;
   font-weight: 500;
   line-height: 23px;
+  padding: 0 10px;
 }
 
 .section-heading > div {
   flex-grow: 1;
   flex-shrink: 1;
   flex-basis: auto;
-  padding: 15px;
 }
 
 .section-add {
@@ -42,9 +42,11 @@
 }
 
 .section-body {
-  border: 1px solid;
-  margin: 5px;
+  margin: 20px;
   display:flex;
+  border-radius: 4px;
+  border: 1px solid rgb(225, 231, 235);
+  background-color: white;
 }
 
 .section-body > div {
@@ -66,7 +68,9 @@
   flex-basis: auto;
   padding: 20px;
   margin: 10px;
-  border: 1px solid;
+  border-radius: 4px;
+  border: 1px solid rgb(225, 231, 235);
+  background-color: white;
 }
 
 .okr-timeframe {
@@ -80,6 +84,10 @@
 
 .okr-title {
   font-weight: bold;
+}
+
+.okr-title:hover {
+  color: rgb(5, 169, 244);
 }
 
 .okr-des {

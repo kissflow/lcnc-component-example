@@ -80,7 +80,7 @@ class OKR extends React.Component {
                 }
               </Tabs>
               </div>
-              {this.state.okrs.length == 0&&
+              {this.state.okrs.length === 0&&
                 <div className="section-body">
                   <div style={{textAlign: "right"}}>
                     <img src={KPIIcon} alt="Low Code - Product has no OKRs yet."/>
@@ -102,7 +102,7 @@ class OKR extends React.Component {
                       </div>
                       <div className="okr-body">
                           <div className="okr-title">
-                              <a href="#" onClick={()=> {this.openOKRForm(okr)}}>{okr.Name_}</a>
+                              <a onClick={()=> {this.openOKRForm(okr)}}>{okr.Name_}</a>
                           </div>
                           <div className="okr-des">
                             {okr.Description}

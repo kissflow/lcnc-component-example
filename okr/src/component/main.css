@@ -9,12 +9,13 @@
   flex-grow: 0;
   flex-shrink: 0;
   flex-basis: 200px;
-  border: 1px solid;
+  border: 1px solid rgb(225, 231, 235);
 }
 
-.container div:nth-of-type(2) {
+.container > div:nth-of-type(2) {
   flex-grow: 1;
   flex-basis: auto;
+  background-color: #f1f5fa;
 }
 
 .nav {
@@ -24,24 +25,23 @@
 }
 
 .nav-item {
-  background: #ffe5e5;
   padding: 10px;
 }
 
 .active-item {
-  background: lightcyan;
+  background-color:rgb(225, 231, 235);
 }
 
 .nav-heading {
   padding: 10px;
-  font-size: 1.2rem;
+  font-weight: bold;
+  color: #9c9c9c;
 }
 
 .nav-add {
   background-color: green;
-  border-radius: 50%;
-  padding: 2px;
+  padding: 3px 2px 1px 2px;
   width: 5px;
   height: 5px;
-  margin-left: 60px;
+  margin-left: 75px;
 }

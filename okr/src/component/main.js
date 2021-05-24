@@ -3,6 +3,7 @@ import './main.css';
 import { groupBy } from '../utils';
 import OKR from './okr'
 import PlusIcon from './images/plus.svg'
+import UserIcon from "./widgets/usericon";
 
 class Main extends React.Component {
 
@@ -60,7 +61,13 @@ class Main extends React.Component {
           <ul className="nav">
             {Object.keys(this.state.businessUnits).map((key, index) => (
               <li className={"nav-item" + (key === this.state.selectedUnit ? " active-item" : "")} key={key} onClick={()=>{this.setActiveUnit(key)}}>
-                {key}
+                <span style={{ cursor: "pointer" }}>
+                  <UserIcon
+                    userId={key}
+                    name={key}
+                  />
+                </span>
+                <span style={{paddingLeft: "10px"}}>{key}</span>
               </li>
             ))}
           </ul>
