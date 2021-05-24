@@ -3,6 +3,7 @@ import './okr.css'
 import Tabs from './widgets/tab'
 import KPIIcon from './images/kpi.svg'
 import Modal from './widgets/modal';
+import OKRForm from './widgets/form';
 
 class OKR extends React.Component {
     constructor(props) {
@@ -118,8 +119,7 @@ class OKR extends React.Component {
             </div>
           </div>
           <Modal show={this.state.show} handleClose={this.closeOKRForm} >
-            <p>Modal</p>
-            <p>Data</p>
+            <OKRForm okr={this.state.selectedOKR}></OKRForm>
           </Modal>
           </>
         );
