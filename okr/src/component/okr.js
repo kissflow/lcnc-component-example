@@ -2,7 +2,7 @@ import React from 'react';
 import './okr.css'
 import Tabs from './widgets/tab'
 import KPIIcon from './images/kpi.svg'
-import Modal from './widgets/modal.js';
+import Modal from './widgets/modal';
 
 class OKR extends React.Component {
     constructor(props) {
@@ -15,7 +15,7 @@ class OKR extends React.Component {
     }
 
     componentDidMount() {
-      window.lcnc.api("/okr/list").then((res) => {
+      window.lcnc.api("/process/2/AcTGcH31RtTqP/admin/OKR_Management/item").then((res) => {
         this.setState({okrs : res.Data})
       });
 
@@ -108,7 +108,7 @@ class OKR extends React.Component {
                             {okr.Description}
                           </div>
                           <div className="okr-details">
-                              {okr.Owner.Name}   {okr._status}
+                              {okr.Owner && okr.Owner.Name}   {okr._status}
                           </div>
                       </div>
                      </div>
