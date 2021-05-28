@@ -1,10 +1,10 @@
 import businessUnits from './business-units.json'
 import okrs from './okr.json'
+import { API } from '../utils/constants'
 
-const MockAPI = {
-  "/dataset/2/AcTGcH31RtTqP/Business_Units/list": businessUnits,
-  "/process/2/AcTGcH31RtTqP/admin/OKR_Management/item": okrs
-}
+const MockAPI = {}
+MockAPI[API.BUSINESS_UNIT_LIST] = businessUnits
+MockAPI[API.OKR_LIST] = okrs
 
 class LcncSdk {
     constructor(props) {

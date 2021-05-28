@@ -4,6 +4,7 @@ import Tabs from './widgets/tab'
 import KPIIcon from './images/kpi.svg'
 import Modal from './widgets/modal';
 import OKRForm from './widgets/form';
+import { API } from '../utils/constants';
 
 class OKR extends React.Component {
     constructor(props) {
@@ -16,14 +17,14 @@ class OKR extends React.Component {
     }
 
     componentDidMount() {
-      window.lcnc.api("/process/2/AcTGcH31RtTqP/admin/OKR_Management/item").then((res) => {
+      window.lcnc.api(API.OKR_LIST).then((res) => {
         this.setState({okrs : res.Data})
       });
 
       
     }
 
-    openOKRForm = (okr) => {
+    openOKRForm = (okr={}) => {
       this.setState({ selectedOKR: okr, show: true });
     }
     closeOKRForm = () => {
@@ -31,6 +32,9 @@ class OKR extends React.Component {
     }
 
     render() {
+        if(this.props.businessGroups.length == 0) {
+          return (<></>);
+        }
         return (
           <>
           <div>
@@ -89,7 +93,7 @@ class OKR extends React.Component {
                   <div> 
                     <div style={{paddingLeft: "5px"}}>Low Code - Product has no OKRs yet.</div>
                     <div style={{padding: "5px"}}>
-                      <button className="button">+ Add New OKR</button> 
+                      <button className="button" onClick={this.openOKRForm}>+ Add New OKR</button> 
                     </div>
                   </div>
                 </div>
@@ -103,13 +107,13 @@ class OKR extends React.Component {
                       </div>
                       <div className="okr-body">
                           <div className="okr-title">
-                              <a onClick={()=> {this.openOKRForm(okr)}}>{okr.Name_}</a>
+                              <a onClick={()=> {this.openOKRForm(okr)}}>{okr.Name_1 || okr.Name}</a>
                           </div>
                           <div className="okr-des">
                             {okr.Description}
                           </div>
                           <div className="okr-details">
-                              {okr.Owner && okr.Owner.Name}   {okr._status}
+                              {okr.Business_Group && okr.Business_Group.Owner && okr.Business_Group.Owner.Name}   {okr._status}
                           </div>
                       </div>
                      </div>

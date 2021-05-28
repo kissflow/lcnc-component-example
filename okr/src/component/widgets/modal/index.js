@@ -8,7 +8,7 @@ class Modal extends Component {
       <div className="modal" id="myModal" role="dialog" className={showHideClassName}>
         <div className="modal-content">
           <div className="modal-header">
-            <h4 className="modal-title">Modal Header</h4>
+            <h4 className="modal-title">OKR Form</h4>
             <button type="button" className="close" onClick={this.props.handleClose}>&times;</button>
           </div>
           <div className="modal-body">
