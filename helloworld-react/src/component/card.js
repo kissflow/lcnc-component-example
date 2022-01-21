@@ -1,9 +1,9 @@
 import React from 'react';
 import './card.css';
 import logo from '../logo.svg';
-import LCNC from '@kissflow/lcnc-sdk-js'
 
-const lcnc = LCNC();
+import KFLowcodeSDK from "@kissflow/lowcode-client-sdk";
+const kf = KFLowcodeSDK();
 
 class Card extends React.Component {
 
@@ -23,7 +23,7 @@ class Card extends React.Component {
   }
 
   getProfileInfo() {
-    lcnc.api("/id").then((res) => {
+    kf.api("/id").then((res) => {
       console.info("API response is", res);
       this.setState({ userProfile: res.UserDetails });
     });

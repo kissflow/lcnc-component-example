@@ -15,7 +15,7 @@
   "author": "vivekmadurai <vivek@kissflow.com>",
   "license": "MIT",
   "dependencies": {
-    "@kissflow/lcnc-sdk-js": "^1.0.1"
+    "@kissflow/lowcode-client-sdk": "^1.0.2"
   },
   "devDependencies": {
     "clean-webpack-plugin": "^4.0.0-alpha.0",

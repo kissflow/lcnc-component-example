@@ -1,12 +1,11 @@
-import LCNC from '@kissflow/lcnc-sdk-js';
-
-const lcnc = LCNC();
+import KFLowcodeSDK from "@kissflow/lowcode-client-sdk";
+const kf = KFLowcodeSDK();
 
 export default class Card {
     constructor (elem) {
       if (!elem) return
       this.elem = elem
-      this.lcnc = lcnc;
+      this.kf = kf;
     }
 
     render () {
@@ -27,15 +26,15 @@ export default class Card {
     }
 
     callParent () {
-      this.lcnc.api("/id").then((res) => {
+      this.kf.api("/id").then((res) => {
          console.info("API response is", res);
          document.getElementById("username").innerText = res.UserDetails.Name;
       });
     }
 
     watchParams () {
-      this.lcnc.watchParams({"test": 123}).then((res) => {
-        console.info("inside component watch param", res);
+      this.kf.watchParams(function(data) {
+        console.info("inside component watch param", data);
       });
     }
 }

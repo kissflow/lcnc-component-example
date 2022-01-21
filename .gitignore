@@ -2,6 +2,11 @@
 .DS_STORE
 */**/.DS_STORE
 
+#temp need to remove
+/card/**
+/okr/**
+/okr-form/**
+
 # Dependency directories
 /node_modules
 */**/node_modules
