@@ -1,0 +1,15 @@
+{
+  "name": "lcnc-component-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "create-kf-component"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "create-kf-component": "workspace:*"
+  }
+}
