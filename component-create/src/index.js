@@ -120,8 +120,6 @@ async function init() {
       "../..",
       `template-${framework}`
     );
-
-    console.log("tempalte path => ", fileURLToPath(import.meta.url), "\n", templateDir);
   
     const write = (file, content) => {
       const targetPath = path.join(root, file);
