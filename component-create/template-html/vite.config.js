@@ -5,6 +5,10 @@ import path from "node:path";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
+  base: "",
+  build: {
+    target: "es2022"
+  },
   server: {
     https: {
       cert: path.resolve("./cert/localhost.crt"),
